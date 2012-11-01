@@ -1133,14 +1133,6 @@ private:
 
                             return lenDir;
                         }
-
-// For some reason OS-X's GCC needs this : it's confused.
-#if defined(STLSOFT_COMPILER_IS_GCC) && \
-    STLSOFT_GCC_VER >= 40200 && \
-    STLSOFT_GCC_VER <  40300
-UNIXSTL_ASSERT(0); // should never get here
-return 0;
-#endif
                     }
                     else
                     {
@@ -1183,6 +1175,14 @@ return 0;
                 }
             }
         }
+
+// For some reason OS-X's GCC needs this : it's confused.
+#if defined(STLSOFT_COMPILER_IS_GCC) && \
+    STLSOFT_GCC_VER >= 40100 && \
+    STLSOFT_GCC_VER <  40300
+UNIXSTL_ASSERT(0); // should never get here
+return 0;
+#endif
     }
 
     static size_type get_full_path_name_impl(char_type const* fileName, us_size_t len, char_type* buffer, size_type cchBuffer)
