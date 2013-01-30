@@ -583,7 +583,7 @@ public:
     }
 
     /// Evaluates whether the given character is the end-of-file.
-    static int_type not_eof(int_type const& c)
+    static int_type not_eof(int_type const&)
     {
         return parent_class_type::not_eof();
     }
