@@ -307,9 +307,9 @@ inline ss_size_t format_bytes(  void const* pv
                 }
 
 #if defined(STLSOFT_COMPILER_IS_GCC)
-                typedef unsigned        int8x_t;
+                typedef unsigned        int8x_t __attribute__((unused));
 #else /* ? compiler */
-                typedef uint32_t        int8x_t;
+                typedef uint32_t        int8x_t __attribute__((unused));
 #endif /* compiler */
 
 #ifndef _STLSOFT_NO_NAMESPACE

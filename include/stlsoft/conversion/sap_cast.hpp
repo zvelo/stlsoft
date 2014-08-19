@@ -142,8 +142,8 @@ inline TO sap_cast(FROM from)
     STLSOFT_STATIC_ASSERT(0 != base_type_traits<FROM>::is_pointer);
     STLSOFT_STATIC_ASSERT(0 != base_type_traits<TO>::is_pointer);
 
-    typedef ss_typename_type_k base_type_traits<FROM>::base_type    from_base_type;
-    typedef ss_typename_type_k base_type_traits<TO>::base_type      to_base_type;
+    typedef ss_typename_type_k base_type_traits<FROM>::base_type    from_base_type __attribute__((unused));
+    typedef ss_typename_type_k base_type_traits<TO>::base_type      to_base_type __attribute__((unused));
 
     // The intermediate type might be void *, void const*, void volatile * or
     // void const volatile *

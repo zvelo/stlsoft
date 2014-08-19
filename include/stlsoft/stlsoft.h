@@ -1351,9 +1351,9 @@
 #elif defined(STLSOFT_CF_STATIC_ASSERT_SUPPORT)
 # if defined(STLSOFT_COMPILER_IS_GCC) || \
       defined(STLSOFT_COMPILER_IS_INTEL)
-#  define STLSOFT_STATIC_ASSERT(ex)         do { typedef int ai[(ex) ? 1 : -1]; } while(0)
+#  define STLSOFT_STATIC_ASSERT(ex)         do { typedef int ai[(ex) ? 1 : -1] __attribute__((unused)); } while(0)
 # else /* ? compiler */
-#  define STLSOFT_STATIC_ASSERT(ex)         do { typedef int ai[(ex) ? 1 : 0]; } while(0)
+#  define STLSOFT_STATIC_ASSERT(ex)         do { typedef int ai[(ex) ? 1 : 0] __attribute__((unused)); } while(0)
 # endif /* compiler */
 #else /* ? STLSOFT_CF_STATIC_ASSERT_SUPPORT */
 # define STLSOFT_STATIC_ASSERT(ex)          STLSOFT_MESSAGE_ASSERT("Static assertion failed: ", (ex))
